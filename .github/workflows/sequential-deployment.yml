@@ -1,4 +1,4 @@
-name: Parallel deployment
+name: Sequential deployment
 on: push
 jobs:
   linter:

@@ -1,4 +1,4 @@
-name: Sequential deployment
+name: Parallel deployment
 on: push
 jobs:
   deploy:
