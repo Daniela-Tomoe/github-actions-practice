@@ -1,4 +1,4 @@
-name: New-issue
+name: Issue related context
 on: [issues, workflow_dispatch]
 jobs:
   details:
