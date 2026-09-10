@@ -1,5 +1,7 @@
 name: Issue related context
-on: issues
+on: 
+  issues:
+    types: [opened, edited, reopened]
 jobs:
   details:
     runs-on: ubuntu-latest
