@@ -1,48 +1,48 @@
-name: Events
-on:
-  pull_request:
-    types: 
-      - opened
-      - reopened
-    branches:
-      - main
-      - 'feat/**'
+# name: Events
+# on:
+#   pull_request:
+#     types: 
+#       - opened
+#       - reopened
+#     branches:
+#       - main
+#       - 'feat/**'
 
-  workflow_dispatch:
+#   workflow_dispatch:
   
-  push:
-    branches:
-      - main
-      - 'feat/**'
-    paths-ignore:
-      - '.github/workflows/*' 
+#   push:
+#     branches:
+#       - main
+#       - 'feat/**'
+#     paths-ignore:
+#       - '.github/workflows/*' 
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output event data
-        run: echo "${{ toJSON(github.event) }}"
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Output event data
+#         run: echo "${{ toJSON(github.event) }}"
         
-      - name: Get code
-        uses: actions/checkout@v7
+#       - name: Get code
+#         uses: actions/checkout@v7
 
-      - name: Install NodeJs
-        uses: actions/setup-node@v7
-        with:
-          node-version: 'lts/*'
+#       - name: Install NodeJs
+#         uses: actions/setup-node@v7
+#         with:
+#           node-version: 'lts/*'
       
-      - name: Install dependencies
-        run: npm ci 
+#       - name: Install dependencies
+#         run: npm ci 
 
-      - name: Run Lint
-        run: npm run lint
+#       - name: Run Lint
+#         run: npm run lint
 
-      - name: Run tests
-        run: npm test
+#       - name: Run tests
+#         run: npm test
 
-      - name: Build project
-        run: npm run build
+#       - name: Build project
+#         run: npm run build
 
-      - name: Deploy code
-        run: echo "Deploying ..."
+#       - name: Deploy code
+#         run: echo "Deploying ..."
