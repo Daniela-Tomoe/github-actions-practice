@@ -1,10 +1,10 @@
-# name: Issue related context
-# on: 
-#   issues:
-#     types: [opened, edited, reopened]
-# jobs:
-#   details:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Github issue context
-#         run: echo "${{ toJSON(github.event) }}"
+name: Issue related context
+on: 
+  issues:
+    types: [opened, edited, reopened]
+jobs:
+  details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github issue context
+        run: echo "${{ toJSON(github.event) }}"
