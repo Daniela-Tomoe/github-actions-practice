@@ -40,7 +40,6 @@ jobs:
         # run: npm run test
         run: npm test -- --reporter=json --outputFile=test.json
       - name: Upload test report
-        # if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v7 
         with:
           name: test-report
